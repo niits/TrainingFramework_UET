@@ -217,7 +217,7 @@ int main()
 	//identifying memory leaks
 	MemoryDump();
 	printf("Press any key...\n");
-	_getch();
+	getch();
 
 	return 0;
 }
