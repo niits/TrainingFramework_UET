@@ -128,6 +128,8 @@
     <None Include="..\Resources\Models\witch.nfg" />
     <None Include="..\Resources\Models\Woman1.nfg" />
     <None Include="..\Resources\Models\Woman2.nfg" />
+    <None Include="..\Resources\Shaders\mObject.fs" />
+    <None Include="..\Resources\Shaders\mObject.vs" />
     <None Include="..\Resources\Shaders\Object.fs" />
     <None Include="..\Resources\Shaders\Object.vs" />
     <None Include="..\Readme.doc" />
