@@ -117,15 +117,15 @@ int Init(ESContext* esContext)
 	texture_woman_2 = new Texture();
 	texture_woman_2->InitTexture2D("../Resources/Textures/Woman2.tga");
 	// Init WVP matrix
-	W = Matrix().SetScale(5.0f, 5.0f, 5.0f)
+	W = Matrix().SetScale(10.0f, 10.0f, 10.0f)
 		* Matrix().SetRotationY(TO_RAD(30))
-		* Matrix().SetTranslation(-5.0f, -2.5f, 5.0f);
+		* Matrix().SetTranslation(-10.0f, -5.0f, 10.0f);
 	W1 = Matrix().SetScale(5.0f, 5.0f, 5.0f)
 		* Matrix().SetRotationY(TO_RAD(-30))
-		* Matrix().SetTranslation(5.0f, -2.5f, 5.0f);
+		* Matrix().SetTranslation(10.0f, -5.0f, 10.0f);
 	W0 = Matrix().SetScale(5.0f, 5.0f, 5.0f)
 		* Matrix().SetRotationY(TO_RAD(120))
-		* Matrix().SetTranslation(-5.0f, -2.5f, 5.0f);
+		* Matrix().SetTranslation(-10.0f, -5.0f, 10.0f);
 	Matrix V = gCamera->GetViewMatrix();
 	Matrix P = gCamera->GetProjecttionMatrix();
 	WVP = W * V * P;
@@ -207,7 +207,6 @@ void Draw(ESContext* esContext)
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
-	eglSwapBuffers(esContext->eglDisplay, esContext->eglSurface);
 
 	glUseProgram(shader_woman->program);
 	//glBindBuffer(GL_ARRAY_BUFFER, vboId);
@@ -246,7 +245,6 @@ void Draw(ESContext* esContext)
 	//glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);
 	glDrawElements(GL_TRIANGLES, model_woman_1->GetNumberOfIndices(), GL_UNSIGNED_INT, 0);
 	//Draw second object
-	eglSwapBuffers(esContext->eglDisplay, esContext->eglSurface);
 
 	glUseProgram(shader_woman->program);
 	//glBindBuffer(GL_ARRAY_BUFFER, vboId);
